@@ -35,6 +35,18 @@ class DatabaseSeeder extends Seeder
                 'password' => bcrypt('alumno')
         ]);
     }
+    private static function seedHabitaciones()
+    {
+        Habitacion::truncate();
+
+        foreach( self::$arrayHabitaciones as $habitacion ) {
+            $p = new Habitacion;
+            $p->numero = $habitacion['numero'];
+            $p->categoria = $habitacion['categoria'];
+            $p->precio = $habitacion['precio'];
+            $p->save();
+        }
+    }
 
     private static $arrayHabitaciones = array(
         array('numero' => 101, 'categoria' => 'Individual', 'precio' => 55),

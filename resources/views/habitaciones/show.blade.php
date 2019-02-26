@@ -17,7 +17,7 @@
             <h6>Categoria: {{$habitacion->categoria}}</h6>
             <h6>Precio: {{$habitacion->precio}}</h6>
             <p><strong>Estado: </strong>
-                @if($habitacion->reservada)
+                @if($habitacion->reserva)
                     Habitación reservada.
                     @php
                     $class = "btn btn-danger";
